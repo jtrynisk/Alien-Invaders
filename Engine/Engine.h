@@ -15,12 +15,18 @@ public:
 
 	bool initialize(const char* windowTitle);
 
+	static double getDeltaTime();
+
 	void update();
 	void beginRender();
 	void endRender();
 
 private:
 	static GLFWwindow* window;
+
+	static double deltaTime;
+
+	double lastTime;
 };
 
 #endif // ENGINE_H
