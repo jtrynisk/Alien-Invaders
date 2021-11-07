@@ -7,9 +7,9 @@ int Engine::SCREEN_WIDTH = 1024;
 GLFWwindow* Engine::window = nullptr;
 double Engine::deltaTime = 0;
 
-Engine::Engine ()
+Engine::Engine (GLFWwindow* win)
 {
-
+	window = win;
 }
 
 Engine::~Engine()
@@ -19,16 +19,6 @@ Engine::~Engine()
 
 bool Engine::initialize(const char* windowTitle)
 {
-	if (!glfwInit())
-	{
-		std::cout << "GLFW failed to init." << std::endl;
-	}
-
-	window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, windowTitle, NULL, NULL);
-	if (window == nullptr)
-	{
-		std::cout << "Error creating window" << std::endl;
-	}
 
 	// GLFW setup
 	glfwMakeContextCurrent(window);

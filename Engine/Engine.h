@@ -10,12 +10,14 @@ public:
 	static int SCREEN_WIDTH;
 	static int SCREEN_HEIGHT;
 
-	Engine();
+	Engine(GLFWwindow* window);
 	~Engine();
 
 	bool initialize(const char* windowTitle);
 
 	static double getDeltaTime();
+
+	static GLFWwindow& getWindow();
 
 	void update();
 	void beginRender();
